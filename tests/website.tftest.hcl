@@ -13,7 +13,7 @@ run "create_bucket" {
 
   # Check that the bucket name is correct
   assert {
-    condition     = aws_s3_bucket.s3_bucket.bucket == "${run.setup_tests.bucket_prefix}-aws-s3-website-test"
+    condition     = aws_s3_bucket.s3_bucket.bucket == var.bucket_name
     error_message = "Invalid bucket name"
   }
 
